@@ -1,0 +1,95 @@
+.header{
+  background: $white;
+  padding: 37px 0 18px;
+}
+.logo-wrap{
+  text-align: center;
+  display: block;
+  margin-bottom: 18px;
+  padding-bottom: 42px;
+  border-bottom: 1px solid $light;
+}
+.logo{
+  span{
+    font-family: $CormorantInfant;
+    display: block;
+  }
+  &-title{
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: bold;
+    font-style: normal;
+    color: $default;
+    margin-bottom: 10px;
+  }
+  &-subtitle{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    font-style: italic;
+    color: $gray;
+  }
+}
+.top-nav{
+  ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  li{}
+  a{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $default;
+    &:hover{
+      color: $primary;
+    }
+  }
+}
+.nav-btn{
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 36px;
+  right: 15px;
+  width: 30px;
+  height: 20px;
+  border-top: 2px solid $default;
+  border-bottom: 2px solid $default;
+  transition: all ease 300ms;
+  box-sizing: border-box;
+  z-index: 11;
+  span{
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    width: 100%;
+    height: 2px;
+    background: $default;
+    display: block;
+    &:before, &:after{
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 2px;
+      top: 0;
+      left: 0;
+
+      transition: all ease 300ms;
+    }
+  }
+  &.is-active{
+    border: 0;
+    span{
+      background: transparent;
+      &:before{
+        transform: rotate(45deg);
+        background: $white;
+      }
+      &:after{
+        transform: rotate(-45deg);
+        background: $white;
+      }
+    }
+  }
+}
